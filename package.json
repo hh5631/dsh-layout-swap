@@ -1,6 +1,6 @@
 {
   "name": "dsh-layout-swap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DSH 布局交换：文件和浏览器居中，聊天放到右侧，可拖动并记住布局。",
   "type": "module",
   "main": "./lib/index.js",
@@ -10,6 +10,7 @@
     "./package.json": "./package.json"
   },
   "files": ["lib", "cordis.patch.yml", "README.md"],
+  "scripts": { "build": "node --check lib/index.js && node --check lib/client.js && node --check lib/release-check.mjs" },
   "engines": { "node": ">=22", "dsh": ">=0.2.2-rc.1 <0.3.0-0" },
   "peerDependencies": { "react": "^18.2.0" },
   "dsh": {
