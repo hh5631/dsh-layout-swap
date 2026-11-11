@@ -15,7 +15,15 @@
 无新增运行依赖、无构建步骤。使用 DSH 自带的 React 和插件服务：
 
 ```sh
-dsh plugin --profile web add link:/Users/wanghao/DSH/dsh-layout-swap
+# 方式一：预构建 tarball（推荐，无需构建授权）
+dsh plugin --profile web add https://github.com/hh5631/dsh-layout-swap/releases/latest/download/dsh-layout-swap.tgz
+
+# 方式二：直接从 GitHub 源码安装
+dsh plugin --profile web add github:hh5631/dsh-layout-swap
+
+# 方式三：本地克隆后安装
+git clone https://github.com/hh5631/dsh-layout-swap.git
+dsh plugin --profile web add link:$PWD/dsh-layout-swap
 ```
 
 插件通过 `dsh.bundle.patch` 自挂载。若当前服务没有自动发现新 bundle，在方便时重启原来的 DSH Web 服务。无需更改官方安装文件或现有编辑器。
